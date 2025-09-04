@@ -1,0 +1,266 @@
+{% load static %}
+{% load crispy_forms_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Service Details - Simon Karuga</title>
+  <meta name="description" content="Detailed information about Simon Karuga's professional web development services.">
+  <meta name="keywords" content="Service Details, Django, Web Developer, Simon Karuga">
+
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Questrial:wght@400&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
+</head>
+
+<body class="service-details-page">
+
+  <!-- Header -->
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="{% url 'index' %}" class="logo d-flex align-items-center me-auto me-xl-0">
+        <h1 class="sitename">Simon Karuga</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        
+        <ul>
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'resume' %}">Resume</a></li>
+            <li><a href="{% url 'portfoliodetails' %}">Portfolio</a></li>
+            <li><a href="{% url 'servicedetails' %}" class="active">Services</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <div class="header-social-links">
+        <a href="https://x.com/home" class="twitter"><i class="bi bi-twitter-x"></i></a>
+        <a href="https://www.facebook.com/xymoh.karuga" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/simon-karuga-760929352?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3Bbc4H2tsZQ0WArr3OcEq6Dg%3D%3D" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        <a href="https://github.com/PsymoreKaruga" class="github"><i class="bi bi-github"></i></a>
+        <a href="https://discord.com/channels/@me" class="discord"><i class="bi bi-discord"></i></a>
+      </div>
+
+    </div>
+  </header>
+  <!-- End Header -->
+
+  <div id="threejs-bg" style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:-1;"></div>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title">
+      <div class="breadcrumbs">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'index' %}"><i class="bi bi-house"></i> Home</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'index' %}#services">Services</a></li>
+            <li class="breadcrumb-item active current">Service Details</li>
+          </ol>
+        </nav>
+      </div>
+      <div class="title-wrapper">
+        <h1>Service Details</h1>
+        <p>Explore the expertise and solutions I offer to help your business grow.</p>
+      </div>
+    </div>
+    <!-- End Page Title -->
+
+    <!-- Service Details Section -->
+    <section id="service-details" class="service-details section">
+      <div class="container" data-aos="fade-up">
+        <div class="row gy-5 align-items-center">
+          <div class="col-lg-6">
+            <img src="{% static 'assets/img/services-1.webp' %}" class="img-fluid rounded-4 mb-4" alt="Service Image">
+          </div>
+          <div class="col-lg-6">
+            <div class="service-description">
+              <h2>Custom Django Web Development</h2>
+              <p>
+                I specialize in building secure, scalable, and high-performance web applications using Django. From concept to deployment, I deliver tailored solutions that empower businesses to thrive in the digital world.
+              </p>
+              <ul>
+                <li><i class="bi bi-check-circle-fill text-primary"></i> End-to-end Django web application development</li>
+                <li><i class="bi bi-check-circle-fill text-primary"></i> RESTful API design and integration</li>
+                <li><i class="bi bi-check-circle-fill text-primary"></i> Database modeling and optimization</li>
+                <li><i class="bi bi-check-circle-fill text-primary"></i> Secure authentication and user management</li>
+                <li><i class="bi bi-check-circle-fill text-primary"></i> Responsive frontend integration</li>
+                <li><i class="bi bi-check-circle-fill text-primary"></i> Deployment, maintenance, and support</li>
+              </ul>
+              <a href="{% url 'contact' %}" class="btn btn-primary mt-3">Request This Service</a>
+            </div>
+          </div>
+        </div>
+        <div class="row gy-5 align-items-center mt-5">
+          <div class="col-lg-6 order-lg-2">
+            <img src="{% static 'assets/img/services-2.webp' %}" class="img-fluid rounded-4 mb-4" alt="Service Image">
+          </div>
+          <div class="col-lg-6 order-lg-1">
+            <div class="service-description">
+              <h2>API & Backend Solutions</h2>
+              <p>
+                I design and implement robust APIs and backend systems for seamless integration with mobile apps, third-party services, and modern frontend frameworks.
+              </p>
+              <ul>
+                <li><i class="bi bi-check-circle-fill text-primary"></i> Django REST Framework expertise</li>
+                <li><i class="bi bi-check-circle-fill text-primary"></i> Secure token-based authentication</li>
+                <li><i class="bi bi-check-circle-fill text-primary"></i> Real-time data processing</li>
+                <li><i class="bi bi-check-circle-fill text-primary"></i> Scalable architecture for growth</li>
+              </ul>
+              <a href="{% url 'contact' %}" class="btn btn-outline-primary mt-3">Get a Quote</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /Service Details Section -->
+
+    <!-- Call to Action Section -->
+    <section class="cta-section section py-5 bg-light">
+      <div class="container text-center" data-aos="fade-up">
+        <h2 class="mb-4">Ready to Elevate Your Business?</h2>
+        <p class="lead mb-4">Let's collaborate to build secure, scalable, and innovative web solutions tailored to your needs.</p>
+        <a href="{% url 'contact' %}" class="btn btn-lg btn-primary">Contact Me Now</a>
+      </div>
+    </section>
+    <!-- /Call to Action Section -->
+
+  </main>
+
+  <footer id="footer" class="footer">
+    <div class="container">
+      <div class="copyright text-center ">
+        <p>2025© <span>Copyright</span> <strong class="px-1 sitename">Simon Karuga</strong> <span>All Rights Reserved</span></p>
+      </div>
+      <div class="social-links d-flex justify-content-center">
+        <a href="https://x.com/home" class="twitter"><i class="bi bi-twitter-x"></i></a>
+        <a href="https://www.facebook.com/xymoh.karuga" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/simon-karuga-760929352?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3Bbc4H2tsZQ0WArr3OcEq6Dg%3D%3D" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        <a href="https://github.com/PsymoreKaruga" class="github"><i class="bi bi-github"></i></a>
+        <a href="https://discord.com/channels/@me" class="discord"><i class="bi bi-discord"></i></a>
+      </div>
+      <div class="credits">
+        Designed by <a href="#">Jades.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <!-- Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.154.0/build/three.min.js"></script>
+  <script>
+    // Creative Three.js animated background for Service Details page
+    const container = document.getElementById('threejs-bg');
+    let scene = new THREE.Scene();
+    let camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+    let renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+    renderer.setClearColor(0x000000, 0); // transparent
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    container.appendChild(renderer.domElement);
+
+    // Responsive resize
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth/window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+
+    // Create a dynamic array of interconnected cubes
+    const cubes = [];
+    const numCubes = 25;
+    const colors = [0x4f46e5, 0x48c6ef, 0x22d3ee, 0xfbbf24];
+
+    // Create cubes
+    for (let i = 0; i < numCubes; i++) {
+      let geometry = new THREE.BoxGeometry(0.7 + Math.random() * 0.5, 0.7 + Math.random() * 0.5, 0.7 + Math.random() * 0.5);
+      let color = colors[i % colors.length];
+      let material = new THREE.MeshStandardMaterial({
+        color: color,
+        emissive: color,
+        emissiveIntensity: 0.6,
+        transparent: true,
+        opacity: 0.7
+      });
+      let cube = new THREE.Mesh(geometry, material);
+      cube.position.set(
+        (Math.random() - 0.5) * 15,
+        (Math.random() - 0.5) * 10,
+        (Math.random() - 0.5) * 12
+      );
+      cube.rotation.x = Math.random() * Math.PI;
+      cube.rotation.y = Math.random() * Math.PI;
+      cube.userData = {
+        speedX: (Math.random() - 0.5) * 0.002,
+        speedY: (Math.random() - 0.5) * 0.002,
+        speedZ: (Math.random() - 0.5) * 0.002,
+        rotationSpeedX: (Math.random() - 0.5) * 0.01,
+        rotationSpeedY: (Math.random() - 0.5) * 0.01
+      };
+      cubes.push(cube);
+      scene.add(cube);
+    }
+
+    // Lighting
+    let ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
+    scene.add(ambientLight);
+    let pointLight = new THREE.PointLight(0x48c6ef, 0.9, 100);
+    pointLight.position.set(0, 0, 10);
+    scene.add(pointLight);
+
+    camera.position.z = 8;
+
+    // Animate
+    function animate() {
+      requestAnimationFrame(animate);
+      cubes.forEach(cube => {
+        cube.position.x += cube.userData.speedX;
+        cube.position.y += cube.userData.speedY;
+        cube.position.z += cube.userData.speedZ;
+        cube.rotation.x += cube.userData.rotationSpeedX;
+        cube.rotation.y += cube.userData.rotationSpeedY;
+
+        // Bounce off edges
+        if (cube.position.x > 7.5 || cube.position.x < -7.5) cube.userData.speedX *= -1;
+        if (cube.position.y > 5 || cube.position.y < -5) cube.userData.speedY *= -1;
+        if (cube.position.z > 6 || cube.position.z < -6) cube.userData.speedZ *= -1;
+      });
+      renderer.render(scene, camera);
+    }
+    animate();
+  </script>
+</body>
+</html>
