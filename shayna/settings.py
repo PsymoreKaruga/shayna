@@ -19,6 +19,7 @@ ALLOWED_HOSTS = [
     "simon-karuga-django-web-dev-portfolio.onrender.com",
     "localhost",
     "127.0.0.1",
+    "shayna.onrender.com",
 ]
 
 # Application definition
