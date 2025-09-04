@@ -97,13 +97,19 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Email (values pulled from environment in production)
-EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST = os.getenv("EMAIL_HOST", "sandbox.smtp.mailtrap.io")
-EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER", "")
-EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD", "")
-EMAIL_PORT = int(os.getenv("EMAIL_PORT", 2525))
+#EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+#EMAIL_HOST = os.getenv("EMAIL_HOST", "sandbox.smtp.mailtrap.io")
+#EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER", "")
+#EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD", "")
+#EMAIL_PORT = int(os.getenv("EMAIL_PORT", 2525))
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
+
+# Looking to send emails in production? Check out our Email API/SMTP product!
+EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
+EMAIL_HOST_USER = '5547bba373e767'
+EMAIL_HOST_PASSWORD = '09566d414f9a53'
+EMAIL_PORT = '2525'
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
