@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Simon Karuga Django Portfolio
 
 Welcome to the Django portfolio website of **Simon Karuga** – Python Django Web Developer, UI/UX Designer, and Digital Solutions Expert.
@@ -129,3 +130,7 @@ This project is for personal and educational use. For commercial use or template
 
 **Designed & Developed by Simon Karuga**  
 _Crafting Code, Building Solutions_
+=======
+# shayna
+Shayna is a modern, responsive Django portfolio and business website for Simon Karuga. It features a professional showcase of skills, projects, services, and contact forms, with creative Three.js backgrounds and advanced UI/UX design. Built for developers, freelancers, and agencies who want a fast, scalable, and visually stunning web presence.
+>>>>>>> c177984a30053e83f596ea6ea27f5d7049941551
