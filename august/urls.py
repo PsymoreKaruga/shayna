@@ -6,6 +6,9 @@ from django.conf.urls.static import static
 
 
 urlpatterns = [
+    # Default Homepage → starterpage
+    path('', views.starterpage, name='starterpage'),
+
     path('', views.starterpage, name='starterpage'),
     path('index', views.index, name='index'),
     path('portfoliodetails', views.portfoliodetails, name='portfoliodetails'),

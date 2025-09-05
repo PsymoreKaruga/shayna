@@ -14,6 +14,14 @@
   <!-- Favicons -->
   <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
   <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+  
+  <!-- Profile Brand in Navbar -->
+ <!-- Profile Picture Top Right -->
+<div class="profile-top-right">
+  <img src="{% static 'assets/img/Simon Macharia Karuga Profile Picture.webp' %}" alt="Simon Karuga" class="profile-pic">
+</div>
+
+
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -29,7 +37,46 @@
 
   <!-- Main CSS File -->
   <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
+
+
+
+
+
+
+
+  
+  
   <style>
+/* Profile logo styling */
+.profile-top-right {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  z-index: 110; /* above header background */
+}
+
+.profile-pic {
+  width: 250px;   /* bigger, like passport size */
+  height: 300px;
+  border-radius: 100%; /* keeps it circular */
+  object-fit: cover;
+  border: 3px solid #60a5fa; /* Soft blue */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.profile-pic:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+}
+
+
+
+
+
+
+    
+
     body.starter-page {
         background: linear-gradient(135deg, #4f46e5 0%, #48c6ef 100%);
         min-height: 100vh;
@@ -145,24 +192,24 @@
         font-weight: 700;
         letter-spacing: 2px;
         text-shadow: 0 2px 8px rgba(72, 198, 239, 0.18);
-    }
+          }
 
-    .navmenu ul li a {
-        color: #fff;
+          .navmenu ul li a {
+        color: #1e293b; /* Professional dark slate blue for visibility */
         font-weight: 500;
         padding: 0.6rem 1.2rem;
         border-radius: 2px;
         transition: background 0.2s, color 0.2s;
-    }
+          }
 
-    .navmenu ul li a:hover,
-    .navmenu ul li a.active {
+          .navmenu ul li a:hover,
+          .navmenu ul li a.active {
         background: rgba(72, 198, 239, 0.18);
-        color: #48c6ef;
-    }
+        color: #22d3ee; /* Vibrant teal for active/hover */
+          }
 
-    .header-social-links a,
-    .footer .social-links a {
+          .header-social-links a,
+          .footer .social-links a {
         color: #fff;
         font-size: 1.3rem;
         margin: 0 0.4rem;
@@ -275,6 +322,11 @@
         <a href="https://discord.com/channels/@me" class="discord"><i class="bi bi-discord"></i></a>
       </div>
 
+      <!-- Theme Toggle -->
+        <button id="theme-toggle" class="btn btn-sm" style="background:none;border:none;font-size:1.3rem;color:inherit;">
+          <i id="theme-icon" class="bi bi-moon-fill"></i>
+        </button>
+
     </div>
   </header>
   <!-- End Header -->
@@ -283,14 +335,32 @@
   <main class="main">
   <section class="starter-section section d-flex align-items-center justify-content-center" style="min-height: 70vh;">
     <div class="container text-center" data-aos="fade-up">
+      <div class="mb-4 d-flex justify-content-center align-items-center flex-column">
+        <!-- SVG Graphic: Modern Abstract Django Logo Style -->
+        <svg width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg" class="mb-3">
+          <circle cx="48" cy="48" r="44" fill="url(#grad1)" stroke="#48c6ef" stroke-width="4"/>
+          <path d="M32 64V32C32 28.6863 34.6863 26 38 26H58C61.3137 26 64 28.6863 64 32V64" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="40" y="40" width="16" height="16" rx="4" fill="#48c6ef" stroke="#fff" stroke-width="2"/>
+          <text x="48" y="60" text-anchor="middle" fill="#fff" font-size="18" font-family="Questrial, Roboto, Arial" font-weight="bold">DJ</text>
+          <defs>
+        <linearGradient id="grad1" x1="0" y1="0" x2="96" y2="96" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#4f46e5"/>
+          <stop offset="1" stop-color="#48c6ef"/>
+        </linearGradient>
+          </defs>
+        </svg>
+      </div>
       <h1 class="display-4 mb-3">Kickstart Your Next Django Project</h1>
       <p class="lead mb-4">
         Build fast, modern, and scalable applications with this clean and modular Django starter template. <br>
         Ideal for launching professional web platforms, dashboards, or client projects—engineered for performance and clarity.
       </p>
       <a href="{% url 'index' %}" class="btn btn-primary btn-lg mt-3">
-        <i class="bi bi-arrow-left"></i> Return to Home</i>
+        <i class="bi bi-arrow-left"></i> Return to Home
       </a>
+
+      
+
     </div>
   </section>
 
@@ -331,6 +401,32 @@
   <!-- Main JS File -->
   <script src="{% static 'assets/js/main.js' %}"></script>
   <script src="https://cdn.jsdelivr.net/npm/three@0.154.0/build/three.min.js"></script>
+
+<script>
+    const toggleBtn = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+
+    // Load saved theme or system preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      themeIcon.className = savedTheme === 'dark' ? 'bi bi-sun-fill' : 'bi bi-moon-fill';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      themeIcon.className = 'bi bi-sun-fill';
+    }
+
+    // Toggle theme
+    toggleBtn.addEventListener('click', () => {
+      let currentTheme = document.documentElement.getAttribute('data-theme');
+      let newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      themeIcon.className = newTheme === 'dark' ? 'bi bi-sun-fill' : 'bi bi-moon-fill';
+    });
+  </script>
+
+
   <script>
     // Three.js animated background for starterpage.html
     const container = document.getElementById('threejs-bg');
